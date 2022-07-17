@@ -24,7 +24,7 @@ function AuthProvider({ children }) {
       setUser({
         ...response.data,
       });
-      localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("token", JSON.stringify(response.data));
       navigate("/home");
     });
     promise.catch((e) => {

@@ -19,7 +19,6 @@ export default function Header() {
 }
 
 const MainHeader = styled.header`
-  background-color: #151515;
   width: 100vw;
   height: 90px;
   position: fixed;
