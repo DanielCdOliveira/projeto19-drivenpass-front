@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
-import{IoLogIn} from "react-icons/io5"
+import{IoLogIn,IoPencil,IoCard,IoWifi} from "react-icons/io5"
+import {FaIdCard} from "react-icons/fa"
+
 export default function Home() {
   const { URL } = useContext(AuthContext);
   const token = JSON.parse(localStorage.getItem("token"));
   const [alldata, setAllData] = useState({})
+
+  const navigate = useNavigate()
+
   useEffect(()=>{
     const config = {
       headers: {
@@ -22,6 +28,8 @@ export default function Home() {
       console.log(response);
     })
   },[])
+
+
   return (
     <PageContainer>
       <Header/>
@@ -31,28 +39,28 @@ export default function Home() {
         {Object.keys(alldata).length > 0 ? 
           (
           <List> 
-            <li>
+            <li onClick={()=>{navigate("/credentials")}}>
               <IoLogIn/>
               <p>Credentials</p>
               <span className="count">{alldata.credentials.length}</span>
             </li>
-            <li>
-              <IoLogIn/>
+            <li onClick={()=>{navigate("/notes")}}>
+              <IoPencil/>
               <p>Notes</p>
               <span className="count">{alldata.notes.length}</span>
             </li>
-            <li>
-              <IoLogIn/>
+            <li onClick={()=>{navigate("/cards")}}>
+              <IoCard/>
               <p>Cards</p>
               <span className="count">{alldata.cards.length}</span>
             </li>
-            <li>
-              <IoLogIn/>
+            <li onClick={()=>{navigate("/wifi")}}>
+              <IoWifi/>
               <p>Wifi</p>
               <span className="count">{alldata.wifi.length}</span>
             </li>
-            <li>
-              <IoLogIn/>
+            <li onClick={()=>{navigate("/documents")}}>
+              <FaIdCard/>
               <p>Documents</p>
               <span className="count">{alldata.documents.length}</span>
             </li>
