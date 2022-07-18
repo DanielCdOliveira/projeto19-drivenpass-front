@@ -8,6 +8,7 @@ import { Title,HomeSection,List } from "../../Utils/Style";
 import { AuthContext } from "../../Context/Auth";
 import{IoLogIn,IoPencil,IoCard,IoWifi} from "react-icons/io5"
 import {FaIdCard} from "react-icons/fa"
+import CreateButton from "../PublicComponents/CreateButton";
 
 export default function Home() {
   const { URL } = useContext(AuthContext);
@@ -68,6 +69,7 @@ export default function Home() {
         ):(<></>)}
      
     </HomeSection>
+    <CreateButton type={"/create"}/>
     </PageContainer>
   );
 }

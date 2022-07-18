@@ -14,4 +14,5 @@ const Button = styled.p`
     bottom: 45px;
     left: 10px;
     text-decoration: underline;
+    background-color: #fff;
 `

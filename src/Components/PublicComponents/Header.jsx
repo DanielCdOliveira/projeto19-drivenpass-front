@@ -31,6 +31,7 @@ const MainHeader = styled.header`
   align-items: center;
   padding: 0 17px 0 28px;
   box-sizing: border-box;
+  background-color: #fff;
   img {
     width: 45px;
   }

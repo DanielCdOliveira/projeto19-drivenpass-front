@@ -15,6 +15,12 @@ import Document from "../ShowData/Document.jsx";
 import Card from "../ShowData/Card.jsx";
 import Note from "../ShowData/Note.jsx";
 import Credential from "../ShowData/Credential.jsx";
+import CreateHome from "../Create/index.jsx";
+import CreateNote from "../Create/CreateNote.jsx";
+import CreateCredential from "../Create/CreateCredential.jsx";
+import CreateDocument from "../Create/CreateDocument.jsx";
+import CreateWifi from "../Create/CreateWifi.jsx";
+import CreateCard from "../Create/CreateCard.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -34,6 +40,12 @@ function App() {
         <Route path="/document/:id" element={<Document />}></Route>
         <Route path="/note/:id" element={<Note/>}></Route>
         <Route path="/wifi/:id" element={<Wifi />}></Route>
+        <Route path="/create" element={<CreateHome />}></Route>
+        <Route path="/create/note" element={<CreateNote />}></Route>
+        <Route path="/create/credential" element={<CreateCredential />}></Route>
+        <Route path="/create/document" element={<CreateDocument />}></Route>
+        <Route path="/create/wifi" element={<CreateWifi />}></Route>
+        <Route path="/create/card" element={<CreateCard />}></Route>
         </Routes>
       </AuthProvider>
     </BrowserRouter>

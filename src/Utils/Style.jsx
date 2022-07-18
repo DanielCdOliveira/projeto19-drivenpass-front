@@ -169,4 +169,54 @@ const HomeSection = styled.section`
   height: fit-content;
   margin-top: 150px;  
 `
-export { PageContainer, MainAuth,Title,List,HomeSection,Details };
+const Form = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 15px;
+  font-size: 18px;
+  height: 400px;
+  overflow-y: scroll;
+  h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .virtual{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    p{
+      margin-top: 8px;
+    }
+    input{
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .normal-input {
+    width: 330px;
+    height: 40px;
+    border: 3px solid #005985;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    padding-left: 8px;
+  }
+  textarea {
+    width: 330px;
+    height: 200px;
+    background: #ffffff;
+    border: 3px solid #005985;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    outline: none;
+  }
+`;
+export { PageContainer, MainAuth,Title,List,HomeSection,Details,Form };
