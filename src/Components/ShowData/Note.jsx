@@ -1,20 +1,18 @@
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
-import { IoCard } from "react-icons/io5";
-import { Title, HomeSection, List } from "../../Utils/Style";
+import { Title, HomeSection, Details } from "../../Utils/Style";
 
-export default function Cards() {
+export default function Note() {
   const { URL } = useContext(AuthContext);
   const token = JSON.parse(localStorage.getItem("token"));
   const [alldata, setAllData] = useState({});
 
-  const navigate = useNavigate();
-
+  const { id } = useParams();
   useEffect(() => {
     const config = {
       headers: {
@@ -22,7 +20,7 @@ export default function Cards() {
       },
     };
     axios
-      .get(URL + "/cards", config)
+      .get(URL + `/note/${id}`, config)
       .then((response) => {
         setAllData(response.data);
       })
@@ -30,30 +28,24 @@ export default function Cards() {
         console.log(response);
       });
   }, []);
-
   return (
     <PageContainer>
       <Header />
-      <Title>Cartôes</Title>
+      <Title>Notas Seguras</Title>
       <HomeSection>
-        <List>
+        <Details>
+          <h2>{alldata.title}</h2>
           {Object.keys(alldata).length > 0 ? (
-            alldata.map((item) => {
-              return (
-                <li
-                  onClick={() => {
-                    navigate(`/card/${item.id}`);
-                  }}
-                >
-                  <IoCard />
-                  <p>{item.title}</p>
-                </li>
-              );
-            })
+            <>
+              <li>
+                <h3>Texto</h3>
+                <p>{alldata.text}</p>
+              </li>
+            </>
           ) : (
             <></>
           )}
-        </List>
+        </Details>
       </HomeSection>
     </PageContainer>
   );

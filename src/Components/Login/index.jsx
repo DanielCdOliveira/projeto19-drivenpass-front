@@ -11,7 +11,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("token"));
     if (user) navigate("/home");
   }, []);
 

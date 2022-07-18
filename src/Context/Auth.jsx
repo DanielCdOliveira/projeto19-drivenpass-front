@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
     });
   }
   function invalidToken(){
-    localStorage.removeItem("user")
+    localStorage.removeItem("token")
     if(window.confirm("Sessão expirada. Deseja ir para a tela de login?"))navigate("/")
   }
 

@@ -34,7 +34,7 @@ export default function Credentials() {
   return (
     <PageContainer>
       <Header />
-      <Title>Minhas senhas</Title>
+      <Title>Credenciais</Title>
       <HomeSection>
         <List>
           {Object.keys(alldata).length > 0 ? (

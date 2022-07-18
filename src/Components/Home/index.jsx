@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

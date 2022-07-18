@@ -143,10 +143,29 @@ const List = styled.ul`
     color:#fff;
   }
 `
+const Details = styled.ul`
+ display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  font-size: 20px;
+    h2{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    li{
+        width: 90%;
+        margin-bottom: 10px;
+        h3{
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+    }
+`;
 
 const HomeSection = styled.section`
   width: 100%;
   height: fit-content;
   margin-top: 150px;  
 `
-export { PageContainer, MainAuth,Title,List,HomeSection };
+export { PageContainer, MainAuth,Title,List,HomeSection,Details };

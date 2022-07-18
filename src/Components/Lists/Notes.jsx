@@ -34,7 +34,7 @@ export default function Notes() {
   return (
     <PageContainer>
       <Header />
-      <Title>Minhas senhas</Title>
+      <Title>Notas Seguras</Title>
       <HomeSection>
         <List>
           {Object.keys(alldata).length > 0 ? (

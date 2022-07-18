@@ -33,7 +33,7 @@ export default function Wifis(){
     return (
       <PageContainer>
         <Header/>
-        <Title>Minhas senhas</Title>
+        <Title>Senhas de Wi-fi</Title>
       <HomeSection>
       <List> 
 

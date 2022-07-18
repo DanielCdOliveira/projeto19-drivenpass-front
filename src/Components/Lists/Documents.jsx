@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
-import{IoLogIn,IoPencil,IoCard,IoWifi} from "react-icons/io5"
 import {FaIdCard} from "react-icons/fa"
 import { Title,HomeSection,List } from "../../Utils/Style";
 
-export default function Document(){
+export default function Documents(){
     const { URL } = useContext(AuthContext);
     const token = JSON.parse(localStorage.getItem("token"));
     const [alldata, setAllData] = useState({})
@@ -33,7 +32,7 @@ export default function Document(){
     return (
       <PageContainer>
         <Header/>
-        <Title>Minhas senhas</Title>
+        <Title>Documentos</Title>
       <HomeSection>
       <List> 
 
@@ -41,7 +40,7 @@ export default function Document(){
             (alldata.map((item)=>{
                 return(  <li onClick={()=>{navigate(`/document/${item.id}`)}}>
                 <FaIdCard/>
-                <p>{item.title}</p>
+                <p>{item.documentType}</p>
               </li>)
             })
           ):(<></>)}
