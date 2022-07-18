@@ -7,6 +7,7 @@ const PageContainer = styled.main`
   background-color: #fff;
   display: flex;
   justify-content: center;
+  position: relative;
 `;
 const MainAuth = styled.section`
   display: flex;

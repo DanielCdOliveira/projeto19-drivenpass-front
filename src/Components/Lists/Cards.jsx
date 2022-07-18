@@ -2,6 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import BackButton from "../PublicComponents/BackButton";
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
@@ -55,6 +56,7 @@ export default function Cards() {
           )}
         </List>
       </HomeSection>
+      <BackButton/>
     </PageContainer>
   );
 }

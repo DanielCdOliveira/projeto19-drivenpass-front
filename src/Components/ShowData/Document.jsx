@@ -1,11 +1,12 @@
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
 import { Title, HomeSection, Details } from "../../Utils/Style";
+import BackButton from "../PublicComponents/BackButton";
 
 export default function Document() {
   const { URL } = useContext(AuthContext);
@@ -63,6 +64,7 @@ export default function Document() {
           )}
         </Details>
       </HomeSection>
+      <BackButton/>
     </PageContainer>
   );
 }

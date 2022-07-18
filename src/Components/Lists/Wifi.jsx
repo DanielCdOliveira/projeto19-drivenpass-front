@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { PageContainer } from "../../Utils/Style";
 import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
-import{IoLogIn,IoPencil,IoCard,IoWifi} from "react-icons/io5"
-import {FaIdCard} from "react-icons/fa"
+import{IoWifi} from "react-icons/io5"
 import { Title,HomeSection,List } from "../../Utils/Style";
+import BackButton from "../PublicComponents/BackButton";
 
 export default function Wifis(){
     const { URL } = useContext(AuthContext);
@@ -47,6 +47,7 @@ export default function Wifis(){
           ):(<></>)}
        </List>
       </HomeSection>
+      <BackButton/>
       </PageContainer>
     );
 }

@@ -7,6 +7,7 @@ import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
 import { IoPencil } from "react-icons/io5";
 import { Title, HomeSection, List } from "../../Utils/Style";
+import BackButton from "../PublicComponents/BackButton";
 
 export default function Notes() {
   const { URL } = useContext(AuthContext);
@@ -55,6 +56,7 @@ export default function Notes() {
           )}
         </List>
       </HomeSection>
+      <BackButton/>
     </PageContainer>
   );
 }

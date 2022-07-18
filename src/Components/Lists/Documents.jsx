@@ -7,6 +7,7 @@ import Header from "../PublicComponents/Header";
 import { AuthContext } from "../../Context/Auth";
 import {FaIdCard} from "react-icons/fa"
 import { Title,HomeSection,List } from "../../Utils/Style";
+import BackButton from "../PublicComponents/BackButton";
 
 export default function Documents(){
     const { URL } = useContext(AuthContext);
@@ -46,6 +47,7 @@ export default function Documents(){
           ):(<></>)}
        </List>
       </HomeSection>
+      <BackButton/>
       </PageContainer>
     );
 }
